@@ -1,0 +1,204 @@
+************************1.Road Vehicles::*******************
+
+Get vehicles based on type(car,truck)
+http://localhost:8080/vehicle/webapi/roadvehicle/car/
+http://localhost:8080/vehicle/webapi/roadvehicle/truck/
+
+Get specific vehicle by passign vehicle type(car) and vehicleid
+http://localhost:8080/vehicle/webapi/roadvehicle/car/1/
+http://localhost:8080/vehicle/webapi/roadvehicle/car/2/
+
+Get specific vehicle by passign vehicle type(truck) and vehicleid
+http://localhost:8080/vehicle/webapi/roadvehicle/truck/1/
+http://localhost:8080/vehicle/webapi/roadvehicle/truck/2/
+
+POST : Adding vehicle(CAR)
+http://localhost:8080/vehicle/webapi/roadvehicle/
+{
+	"vehicleName":"car",
+	"brandName":"VW",
+	"fuel":"petrol",
+	"enginecapacity":1000,
+	"speed":150
+}
+
+POST : Adding vehicle(TRUCK)
+http://localhost:8080/vehicle/webapi/roadvehicle/
+
+{
+	"vehicleName":"truck",
+	"brandName":"BharathBENZ",
+	"fuel":"diesel",
+	"enginecapacity":2000,
+	"speed":200
+}
+
+PUT : Updating Vehicle(CAR)
+
+http://localhost:8080/vehicle/webapi/roadvehicle/
+{
+	"vehicleName":"car",
+	"brandName":"VW",
+	"fuel":"petrol",
+	"enginecapacity":1000,
+	"speed":160,
+	"vid":3
+}
+
+PUT : Updating vehicle(TRUCK)
+http://localhost:8080/vehicle/webapi/roadvehicle/
+
+{
+    "brandName": "BharathBENZ",
+    "enginecapacity": 3000,
+    "fuel": "diesel",
+    "speed": 200,
+    "vehicleName": "truck",
+    "vid": 1
+}
+
+DELETE : Delete an vehicle
+http://localhost:8080/vehicle/webapi/roadvehicle/car/1/
+
+http://localhost:8080/vehicle/webapi/roadvehicle/truck/1/
+
+************************2. Water Vehicles::*******************
+Get water vehicles based on type(boat,vessel)
+http://localhost:8080/vehicle/webapi/watervehicle/boat/
+http://localhost:8080/vehicle/webapi/watervehicle/vessel/
+
+Get specific water vehicle by passing an vehicle type(boat) and vehicleid
+http://localhost:8080/vehicle/webapi/watervehicle/boat/1/
+http://localhost:8080/vehicle/webapi/watervehicle/boat/2/
+
+Get specific vehicle by passign vehicle type(vessel) and vehicleid
+http://localhost:8080/vehicle/webapi/watervehicle/vessel/1/
+http://localhost:8080/vehicle/webapi/watervehicle/vessel/2/
+
+POST : Adding water vehicle(boat)
+http://localhost:8080/vehicle/webapi/watervehicle/
+{
+	"vehicleName":"boat",
+	"brandName":"Chaparral",
+	"fuel":"petrol",
+	"enginecapacity":5000,
+	"speed":100,
+	"weight":1000,
+	"space":500
+}
+
+
+POST : Adding vehicle(vessel)
+http://localhost:8080/vehicle/webapi/watervehicle/
+
+{
+	"vehicleName":"boat",
+	"brandName":"Maersk",
+	"fuel":"diesel",
+	"enginecapacity":500000,
+	"speed":40,
+	"weight":100000,
+	"space":10000
+}
+
+PUT : Updating Vehicle(Boat)
+
+http://localhost:8080/vehicle/webapi/watervehicle/
+{
+    "brandName": "Chaparral",
+    "enginecapacity": 6000,
+    "fuel": "petrol",
+    "space": 500,
+    "speed": 100,
+    "vehicleName": "boat",
+    "vid": 3,
+    "weight": 1000
+}
+
+PUT : Updating vehicle(Vessel)
+http://localhost:8080/vehicle/webapi/watervehicle/
+
+{
+    "brandName": "Maersk",
+    "enginecapacity": 500000,
+    "fuel": "diesel",
+    "space": 20000,
+    "speed": 35,
+    "vehicleName": "boat",
+    "vid": 3,
+    "weight": 100000
+}
+
+DELETE : Delete an vehicle
+http://localhost:8080/vehicle/webapi/watervehicle/boat/1/
+
+http://localhost:8080/vehicle/webapi/watervehicle/vessel/1/
+
+
+************************3. Air Vehicles::*******************
+Get Air vehicles based on type(airbus,drone)
+http://localhost:8080/vehicle/webapi/airvehicle/airbus/
+http://localhost:8080/vehicle/webapi/airvehicle/drone/
+
+Get specific Air vehicle by passing an vehicle type(airbus) and vehicleid
+http://localhost:8080/vehicle/webapi/airvehicle/airbus/1/
+http://localhost:8080/vehicle/webapi/airvehicle/airbus/2/
+
+Get specific vehicle by passing vehicle type(drone) and vehicleid
+http://localhost:8080/vehicle/webapi/airvehicle/drone/1/
+http://localhost:8080/vehicle/webapi/airvehicle/drone/2/
+
+POST : Adding Air vehicle(airbus)
+http://localhost:8080/vehicle/webapi/airvehicle/
+{
+	"vehicleName":"airbus",
+	"brandName":"Emirates",
+	"fuel":"petrol",
+	"enginecapacity":500000,
+	"speed":1000,
+	"weight":100000
+}
+
+
+POST : Adding Air vehicle(drone)
+http://localhost:8080/vehicle/webapi/airvehicle/
+
+{
+	"vehicleName":"drone",
+	"brandName":"Hubsan",
+	"fuel":"battery",
+	"enginecapacity":50,
+	"speed":35,
+	"weight":10
+}
+
+PUT : Updating Air Vehicle(AirBus)
+
+http://localhost:8080/vehicle/webapi/airvehicle/
+{
+    "brandName": "Emirates",
+    "enginecapacity": 500000,
+    "fuel": "petrol",
+    "speed": 900,
+    "vehicleName": "airbus",
+    "vid": 2,
+    "weight": 200000
+}
+
+PUT : Updating Air vehicle(drone)
+http://localhost:8080/vehicle/webapi/airvehicle/
+
+{
+    "brandName": "Hubsan",
+    "enginecapacity": 50,
+    "fuel": "battery",
+    "speed": 30,
+    "vehicleName": "drone",
+    "vid": 2,
+    "weight": 9
+}
+
+DELETE : Delete an Air vehicle
+http://localhost:8080/vehicle/webapi/airvehicle/airbus/1/
+
+http://localhost:8080/vehicle/webapi/airvehicle/drone/1/
