@@ -16,7 +16,7 @@ public class AirVehicleService {
 	
 	public AirVehicleService(){
 		airVehAeroDao.put(1L, new AirVehicle(1,"AIRBUS","SpiceJet","Petrol",100000,5000,50000L));
-		airVehDroneDao.put(2L, new AirVehicle(2,"Drone","Blade","Battery",50,35,10L));
+		airVehDroneDao.put(2L, new AirVehicle(1,"Drone","Blade","Battery",50,35,10L));
 	}
 	
 	//Fetching list of vehicles for particular type(airbus,drone,..) type from DAO 
@@ -53,7 +53,7 @@ public class AirVehicleService {
 			if("airbus".equalsIgnoreCase(vehicle.getVehicleName())) {
 				vehicle.setVid(airVehAeroDao.size()+1);
 				airVehAeroDao.put(vehicle.getVid(), vehicle);
-			}else if("vessel".equalsIgnoreCase(vehicle.getVehicleName())) {
+			}else if("drone".equalsIgnoreCase(vehicle.getVehicleName())) {
 				vehicle.setVid(airVehDroneDao.size()+1);
 				airVehDroneDao.put(vehicle.getVid(), vehicle);
 			}
