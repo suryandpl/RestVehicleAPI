@@ -6,12 +6,18 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class RoadVehicle  implements Vehicle{
 	long vid;
 	String vehicleName;
+	String brandName;
 	String fuel;
 	int enginecapacity;
 	int speed;
-	public RoadVehicle(long id,String vname,String fuel,int cc,int speed) {
+	//Default constructor
+	public RoadVehicle() {
+		
+	}
+	public RoadVehicle(long id,String vname,String bname,String fuel,int cc,int speed) {
 		this.vid=id;
 		this.vehicleName=vname;
+		this.brandName=bname;
 		this.fuel=fuel;
 		this.enginecapacity=cc;
 		this.speed=speed;
@@ -45,6 +51,12 @@ public class RoadVehicle  implements Vehicle{
 	}
 	public void setSpeed(int speed) {
 		this.speed = speed;
+	}
+	public String getBrandName() {
+		return brandName;
+	}
+	public void setBrandName(String brandName) {
+		this.brandName = brandName;
 	}
 	
 }

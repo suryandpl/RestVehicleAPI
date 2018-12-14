@@ -7,14 +7,22 @@ public class AirVehicle implements Vehicle{
 
 	long vid;
 	String vehicleName;
+	String brandName;
 	String fuel;
 	int enginecapacity;
 	int speed;
 	long weight;
 	
-	public AirVehicle(long id,String vname,String fuel,int cc,int speed, long weight) {
+	/**
+	 *Default Constructor 
+	 */
+	public AirVehicle() {
+		
+	}
+	public AirVehicle(long id,String vname,String bname,String fuel,int cc,int speed, long weight) {
 		this.vid=id;
 		this.vehicleName=vname;
+		this.brandName=bname;
 		this.fuel=fuel;
 		this.enginecapacity=cc;
 		this.speed=speed;
@@ -55,5 +63,11 @@ public class AirVehicle implements Vehicle{
 	}
 	public void setWeight(long weight) {
 		this.weight = weight;
+	}
+	public String getBrandName() {
+		return brandName;
+	}
+	public void setBrandName(String brandName) {
+		this.brandName = brandName;
 	}
 }

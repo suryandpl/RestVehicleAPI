@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.surya.vehicles.vehicle.database.VehicleDAO;
 import org.surya.vehicles.vehicle.model.AirVehicle;
+import org.surya.vehicles.vehicle.model.WaterVehicle;
 
 
 public class AirVehicleService {
@@ -13,19 +14,19 @@ public class AirVehicleService {
 	Map<Long,AirVehicle> airVehAeroDao = VehicleDAO.getAirBusDao();
 	Map<Long,AirVehicle> airVehDroneDao = VehicleDAO.getDroneDao();
 	
-	/*public AirVehicleService(){
-		airVehAeroDao.put(1L, new AirVehicle(1,"AIRBUS","Petrol",100000,5000,50000L));
-		airVehDroneDao.put(2L, new AirVehicle(2,"Drone","Battery",50,35,10L));
-	}*/
+	public AirVehicleService(){
+		airVehAeroDao.put(1L, new AirVehicle(1,"AIRBUS","SpiceJet","Petrol",100000,5000,50000L));
+		airVehDroneDao.put(2L, new AirVehicle(2,"Drone","Blade","Battery",50,35,10L));
+	}
 	
-	//Fetching list of vehicles for particular type(Boat,vessel,..) type from DAO 
+	//Fetching list of vehicles for particular type(airbus,drone,..) type from DAO 
 	public List<AirVehicle> getAllTypeVehicles(String vtype){
 		List<AirVehicle> aList = new ArrayList<AirVehicle>();
-		if(null !=vtype) {
+		if(null !=vtype) {	
 			if("airbus".equalsIgnoreCase(vtype)) {
-				aList =  (ArrayList<AirVehicle>) airVehAeroDao.values();
+				aList =  new ArrayList<AirVehicle>(airVehAeroDao.values());
 			}else if("drone".equalsIgnoreCase(vtype)) {
-				aList =  (ArrayList<AirVehicle>) airVehDroneDao.values();
+				aList =  new ArrayList<AirVehicle>(airVehDroneDao.values());
 			}
 		} else {
 			System.out.println("Air Vehicle type request is empty");
@@ -46,7 +47,7 @@ public class AirVehicleService {
 		}
 		return avehicle;
 	}
-	//Adding Vehicle into DAO
+	//Adding air Vehicle into DAO
 	public AirVehicle addAirVehicle(AirVehicle vehicle){
 		if(vehicle.getVehicleName()!=null) {
 			if("airbus".equalsIgnoreCase(vehicle.getVehicleName())) {
@@ -61,7 +62,7 @@ public class AirVehicleService {
 		}
 		return vehicle;
 	}
-	//Updating Vehicle into DAO
+	//Updating air Vehicle into DAO
 	public AirVehicle updateAirVehicle(AirVehicle vehicle){
 		if(vehicle.getVid()==0)return null;
 		if(vehicle.getVehicleName()!=null) {
@@ -75,7 +76,7 @@ public class AirVehicleService {
 		}
 		return vehicle;
 	}
-	//Deleting vehicle from DAO
+	//Deleting air vehicle from DAO
 	public AirVehicle deleteAirVehicle(String vtype,Long id){
 		AirVehicle avehicle = null;
 		if(null !=vtype) {
@@ -89,7 +90,5 @@ public class AirVehicleService {
 		}
 		return avehicle;
 	}
-
-
 
 }

@@ -51,7 +51,7 @@ public class WaterVehicleResource {
 	 *@param : Vehicle
 	 */
 	@POST
-	@Produces(MediaType.TEXT_PLAIN)
+	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public WaterVehicle addWaterVehicle(WaterVehicle vehicle){
 		System.out.println("Vehicle : "+vehicle);

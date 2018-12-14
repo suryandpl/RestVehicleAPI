@@ -53,7 +53,7 @@ public class AirVehicleResource {
 	 *@param : Vehicle
 	 */
 	@POST
-	@Produces(MediaType.TEXT_PLAIN)
+	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public AirVehicle addAirVehicle(AirVehicle vehicle){
 		System.out.println("Vehicle : "+vehicle);

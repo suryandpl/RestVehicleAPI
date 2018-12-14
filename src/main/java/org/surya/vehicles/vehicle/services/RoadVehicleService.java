@@ -13,19 +13,19 @@ public class RoadVehicleService {
 	Map<Long,RoadVehicle> RoadVehCarDao = VehicleDAO.getCarsDao();
 	Map<Long,RoadVehicle> RoadVehTruckDao = VehicleDAO.getTrucksDao();
 	
-	/*public RoadVehicleService(){
-		RoadVehCarDao.put(1L, new RoadVehicle(1,"BMW","Petrol",2000));
-		RoadVehCarDao.put(2L, new RoadVehicle(2,"Audi","Diesel",1500));
-	}*/
+	public RoadVehicleService(){
+		RoadVehCarDao.put(1L, new RoadVehicle(1,"car","BMW","Petrol",2000,150));
+		RoadVehCarDao.put(2L, new RoadVehicle(2,"car","Audi","Diesel",1500,120));
+	}
 	
 	//Fetching list of vehicles for particular type(Car,Truck,Bus..) type from DAO 
 	public List<RoadVehicle> getAllTypeVehicles(String vtype){
 		List<RoadVehicle> rList = new ArrayList<RoadVehicle>();
 		if(null !=vtype) {
 			if("car".equalsIgnoreCase(vtype)) {
-				rList =  (ArrayList<RoadVehicle>) RoadVehCarDao.values();
+				rList =   new ArrayList<RoadVehicle>(RoadVehCarDao.values());
 			}else if("Truck".equalsIgnoreCase(vtype)) {
-				rList =  (ArrayList<RoadVehicle>) RoadVehTruckDao.values();
+				rList =  new ArrayList<RoadVehicle>(RoadVehTruckDao.values());
 			}
 		} else {
 			System.out.println("Vehicle type request is empty");

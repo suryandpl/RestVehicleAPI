@@ -31,6 +31,7 @@ public class RoadVehicleResource {
 	@GET @Path("/{vtype}") 
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<RoadVehicle> getVehiclesByType(@PathParam("vtype") String vtype) {
+		System.out.println("vehicle type :"+vtype);
 		return service.getAllTypeVehicles(vtype);
 	}
 	
@@ -51,7 +52,7 @@ public class RoadVehicleResource {
 	 *@param : Vehicle
 	 */
 	@POST
-	@Produces(MediaType.TEXT_PLAIN)
+	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public RoadVehicle addRoadVehicle(RoadVehicle vehicle){
 		System.out.println("Vehicle : "+vehicle);
