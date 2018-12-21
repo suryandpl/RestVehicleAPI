@@ -2,6 +2,7 @@ package org.surya.vehicles.vehicle.resources;
 
 import java.util.List;
 
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -12,6 +13,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.surya.vehicles.vehicle.model.AirVehicle;
 import org.surya.vehicles.vehicle.services.AirVehicleService;
 
@@ -20,8 +22,8 @@ import org.surya.vehicles.vehicle.services.AirVehicleService;
 public class AirVehicleResource {
 
 
-
-	AirVehicleService service = new AirVehicleService();
+	@Autowired
+	private AirVehicleService service;
 	
 	/*@GET
 	@Produces({MediaType.APPLICATION_JSON,MediaType.TEXT_PLAIN})
@@ -31,7 +33,8 @@ public class AirVehicleResource {
 	
 	
 	@GET @Path("/{vtype}") 
-	@Produces(MediaType.APPLICATION_JSON)
+	@Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
+	@Consumes({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
 	public List<AirVehicle> getVehiclesByType(@PathParam("vtype") String vtype) {
 		return service.getAllTypeVehicles(vtype);
 	}
@@ -43,7 +46,8 @@ public class AirVehicleResource {
 	 */
 	@GET
 	@Path("/{vehicleType}/{vehicleId}")
-	@Produces(MediaType.APPLICATION_JSON)
+	@Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
+	@Consumes({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
 	public AirVehicle getAirVehicle(@PathParam("vehicleType") String vehicleType,@PathParam("vehicleId") long id){
 		return service.getAirVehicle(vehicleType,id);
 	}
@@ -53,8 +57,8 @@ public class AirVehicleResource {
 	 *@param : Vehicle
 	 */
 	@POST
-	@Produces(MediaType.APPLICATION_JSON)
-	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
+	@Consumes({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
 	public AirVehicle addAirVehicle(AirVehicle vehicle){
 		System.out.println("Vehicle : "+vehicle);
 		return service.addAirVehicle(vehicle);
@@ -65,8 +69,8 @@ public class AirVehicleResource {
 	 *@param : Vehicle
 	 */
 	@PUT
-	@Produces(MediaType.APPLICATION_JSON)
-	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
+	@Consumes({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
 	public AirVehicle updateAirVehicle(AirVehicle vehicle){
 		return service.updateAirVehicle(vehicle);
 	}
@@ -78,7 +82,7 @@ public class AirVehicleResource {
 	 */
 	@DELETE
 	@Path("/{vehicleType}/{vehicleId}")
-	@Produces(MediaType.APPLICATION_JSON)
+	@Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
 	public void deleteAirVehicle(@PathParam("vehicleType") String vehicleType,@PathParam("vehicleId") long id){
 		service.deleteAirVehicle(vehicleType,id);
 	}

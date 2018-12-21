@@ -12,14 +12,15 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.surya.vehicles.vehicle.model.WaterVehicle;
 import org.surya.vehicles.vehicle.services.WaterVehicleService;
 
 @Path("watervehicle")
 public class WaterVehicleResource {
 
-
-	WaterVehicleService service = new WaterVehicleService();
+	@Autowired
+	WaterVehicleService service;
 	
 	/*@GET
 	@Produces({MediaType.APPLICATION_JSON,MediaType.TEXT_PLAIN})
