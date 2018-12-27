@@ -6,7 +6,7 @@ import java.util.Map;
 
 import org.surya.vehicles.vehicle.database.VehicleDAO;
 import org.surya.vehicles.vehicle.model.AirVehicle;
-import org.surya.vehicles.vehicle.model.WaterVehicle;
+
 
 
 public class AirVehicleService {
